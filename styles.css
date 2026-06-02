@@ -1220,6 +1220,122 @@ a {
   }
 }
 
+/* ——— CERTIFICATIONS ——— */
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.certification-card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.15rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 34%),
+    rgba(11, 13, 14, 0.82);
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.certification-card:hover {
+  background:
+    linear-gradient(135deg, rgba(85, 203, 211, 0.08), transparent 40%),
+    var(--panel-2);
+  transform: translateY(-4px);
+}
+
+.certification-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.certification-issuer {
+  color: var(--cyan);
+}
+
+.certification-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0.5rem 0;
+}
+
+.certification-badge img {
+  max-height: 100%;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.certification-badge-placeholder {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.certification-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.certification-code {
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.certification-competences {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.certification-actions {
+  margin-top: 0.4rem;
+}
+
+.certification-link {
+  min-height: 34px;
+  padding: 0 0.8rem;
+  font-size: 0.66rem;
+}
+
+@media (max-width: 1160px) {
+  .certification-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .certification-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

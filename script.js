@@ -38,12 +38,12 @@ const projects = [
     title: "LOXAM - Agent Smart Visit",
     status: "publié",
     description: "Agent commercial Agentforce d'aide post-visite chantier pour les commerciaux du leader européen de la location BTP.",
-    problem: "Les comptes-rendus de visite étaient rédigés à 75 %, et seulement 30 % étaient complets - perte d'informations terrain et reporting inutilisable.",
-    method: "Saisie vocale ou textuelle du commercial, structuration auto du CR, relance par questions de l'agent en cas d'éléments manquants. Automatisation des actions liées : création prochaine visite, tâches, mise à jour contact et offre. Lexique métier BTP intégré.",
-    result: "95 % de CR rédigés (+20 pts), 80 % de CR complets (+50 pts), 5 min par CR - soit 2h30 de gain par commercial et par semaine.",
-    limit: "Couverture limitée au workflow post-visite, pas encore d'extension à la prospection.",
-    nextStep: "Extension aux interventions techniques et au reporting consolidé direction commerciale.",
-    stack: ["Salesforce Agentforce", "Reconnaissance vocale", "Flow Builder", "Apex", "Migration de données", "Recette technique"],
+    details: [
+      ["Contexte", "Agent commercial Agentforce d'aide post-visite chantier pour LOXAM, leader européen de la location de matériel BTP. Saisie vocale ou textuelle du commercial, structuration automatique du CR, relance sur éléments manquants, création de la prochaine visite, tâches de suivi, mise à jour contact et offre."],
+      ["Mon périmètre", "Responsable des tests avant migration en production. Rédaction du cahier de recette. Conception de la documentation technique couvrant l'ensemble du projet, de la conception jusqu'à la mise en production."],
+      ["ROI mesuré", "Taux de CR rédigés : 75 % à 95 % (+20 pts). Complétude des CR : 30 % à 80 % (+50 pts). Temps moyen : 5 min/CR, soit environ 2h30 de gain par commercial et par semaine."]
+    ],
+    stack: ["Salesforce Agentforce", "Recette technique", "Documentation technique", "Migration de données"],
     tags: ["IA", "salesforce", "BTP", "commercial"],
     github: "#",
     live: "#",
@@ -264,6 +264,114 @@ const contacts = [
   { label: "GitHub",   value: "github.com/princekombila",                     href: profile.github }
 ];
 
+const certifications = [
+  // ——— SALESFORCE (4 certifications officielles) ———
+  {
+    name: "Agentforce Specialist",
+    issuer: "Salesforce",
+    code: "AI-201",
+    badge: "assets/badges/agentforce-specialist.png",
+    href: "https://trailheadacademy.salesforce.com/certificate/exam-agentforce-specialist---AI-201",
+    competences: "Conception et déploiement d'agents IA conversationnels sur Salesforce Agentforce. Configuration des topics, actions et instructions d'agent. Prompt engineering appliqué aux agents autonomes. Orchestration d'actions dans des workflows Salesforce."
+  },
+  {
+    name: "Data Cloud Consultant",
+    issuer: "Salesforce",
+    code: "Data-Con-101",
+    badge: "assets/badges/data-cloud-consultant.png",
+    href: "https://trailheadacademy.salesforce.com/certificate/exam-data-cloud---Data-Con-101",
+    competences: "Configuration de Salesforce Data Cloud : Data Streams, Data Model Objects (DMO), Search Index. Ingestion et harmonisation de données multi-sources. Segmentation, activation et résolution d'identités. Intégration avec Einstein AI et les flux Salesforce."
+  },
+  {
+    name: "Platform Administrator",
+    issuer: "Salesforce",
+    code: "Plat-Admn-201",
+    badge: "assets/badges/platform-admin.png",
+    href: "https://trailheadacademy.salesforce.com/certificate/exam-platform-admin---Plat-Admn-201",
+    competences: "Administration complète de la plateforme Salesforce. Gestion des utilisateurs, profils, rôles et permissions. Configuration du modèle de données, objets custom et relations. Automatisation via Flow Builder. Sécurité des données, règles de partage et audit."
+  },
+  {
+    name: "AI Associate",
+    issuer: "Salesforce",
+    code: "Certifié",
+    badge: "assets/badges/ai-associate.png",
+    href: "https://trailhead.salesforce.com/credentials/aiassociate",
+    competences: "Fondamentaux de l'intelligence artificielle appliquée au CRM. Concepts de machine learning, NLP et IA générative dans l'écosystème Salesforce. Éthique de l'IA, biais et gouvernance des données. Cas d'usage Einstein AI et Trust Layer."
+  },
+
+  // ——— SALESFORCE COMMUNAUTÉ (2 distinctions) ———
+  {
+    name: "Trailhead Double Star Ranger",
+    issuer: "Salesforce Trailhead",
+    code: "Communauté",
+    badge: "assets/badges/trailhead-ranger.png",
+    href: null,
+    competences: "Plus de 100 badges Trailhead complétés couvrant l'administration, le développement, Data Cloud et l'IA. Superbadges validant des compétences appliquées dans des scénarios de complexité réelle."
+  },
+  {
+    name: "Agentblazer Legend",
+    issuer: "Salesforce Community",
+    code: "Communauté 2025",
+    badge: "assets/badges/agentblazer-legend.jpg",
+    href: null,
+    competences: "Distinction communautaire Salesforce reconnaissant une expertise avancée sur Agentforce. Contribution active à l'adoption et à la diffusion des bonnes pratiques autour des agents IA Salesforce."
+  },
+
+  // ——— ALTERYX (2 certifications) ———
+  {
+    name: "Designer Core Certification",
+    issuer: "Alteryx",
+    code: "Validée",
+    badge: "assets/badges/alteryx-designer-core.webp",
+    href: null,
+    competences: "Maîtrise d'Alteryx Designer pour la construction de workflows ETL visuels. Nettoyage, transformation, jointure et enrichissement de données. Préparation analytique et automatisation de pipelines data sans code."
+  },
+  {
+    name: "Foundational Micro-Credential",
+    issuer: "Alteryx",
+    code: "Nov. 2025",
+    badge: "assets/badges/alteryx-foundational.webp",
+    href: null,
+    competences: "Fondamentaux de la plateforme Alteryx. Manipulation de données tabulaires, blending de sources, filtrage et agrégation. Première brique de compétence vers les certifications avancées."
+  },
+
+  // ——— LIORA / DATASCIENTEST (1 certification) ———
+  {
+    name: "Data Analyst - Niveau 3 (FR)",
+    issuer: "Liora (DataScientest)",
+    code: "29 mai 2026",
+    badge: null,
+    href: null,
+    competences: "Analyse de données avancée : statistiques descriptives et inférentielles, tests d'hypothèses. Programmation Python (Pandas, NumPy, Matplotlib). Requêtes SQL complexes. Datavisualisation et restitution de résultats pour la prise de décision."
+  },
+
+  // ——— TECHAWAY × DATASCIENTEST × OMNES EDUCATION (3 certifications) ———
+  {
+    name: "Python Fundamentals for Data Science",
+    issuer: "TECHaway × DataScientest × Omnes",
+    code: "21 juil. 2025",
+    badge: null,
+    href: null,
+    competences: "Programmation Python appliquée à la data science. Structures de données, fonctions, librairies Pandas et NumPy. Manipulation, nettoyage et exploration de jeux de données."
+  },
+  {
+    name: "Building Data Workflows with No-Code Platforms",
+    issuer: "TECHaway × DataScientest × Omnes",
+    code: "21 juil. 2025",
+    badge: null,
+    href: null,
+    competences: "Construction de workflows de données sur plateformes no-code. Automatisation de pipelines d'ingestion, transformation et export. Orchestration de tâches data marketing sans écrire de code."
+  },
+  {
+    name: "Data-Driven Marketing with No-Code Tools",
+    issuer: "TECHaway × DataScientest × Omnes",
+    code: "21 juil. 2025",
+    badge: null,
+    href: null,
+    competences: "Marketing piloté par la donnée à l'aide d'outils no-code. Segmentation client, scoring, personnalisation de campagnes. Mesure de performance et optimisation basée sur les données."
+  }
+];
+
 const createElement = (tag, className, text) => {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -389,13 +497,14 @@ function renderProjects() {
     const description = createElement("p", "project-description", project.description);
 
     const details = createElement("dl", "project-details");
-    [
+    const detailRows = project.details || [
       ["Probleme", project.problem],
       ["Methode", project.method],
       ["Livrable", project.result],
       ["Limite", project.limit],
       ["Suite", project.nextStep]
-    ].forEach(([term, value]) => {
+    ];
+    detailRows.forEach(([term, value]) => {
       details.appendChild(createElement("dt", "", term));
       details.appendChild(createElement("dd", "", value));
     });
@@ -456,6 +565,47 @@ function renderSkills() {
       createElement("span", "", value)
     ]);
     matrix.appendChild(row);
+  });
+}
+
+function renderCertifications() {
+  const grid = document.querySelector("#certification-grid");
+  if (!grid) return;
+
+  certifications.forEach((cert, index) => {
+    const card = createElement("article", "certification-card reveal");
+
+    const top = createElement("div", "certification-top");
+    appendChildren(top, [
+      createElement("span", "", String(index + 1).padStart(2, "0")),
+      createElement("span", "certification-issuer", cert.issuer)
+    ]);
+
+    const badgeContainer = createElement("div", "certification-badge");
+    if (cert.badge) {
+      const img = document.createElement("img");
+      img.src = cert.badge;
+      img.alt = cert.name;
+      img.loading = "lazy";
+      badgeContainer.appendChild(img);
+    } else {
+      const placeholder = createElement("div", "certification-badge-placeholder");
+      placeholder.textContent = cert.issuer.charAt(0);
+      badgeContainer.appendChild(placeholder);
+    }
+
+    const title = createElement("h3", "", cert.name);
+    const code = createElement("span", "certification-code", cert.code);
+    const desc = createElement("p", "certification-competences", cert.competences);
+
+    const actions = createElement("div", "certification-actions");
+    if (cert.href) {
+      const link = createLink(cert.href, "Vérifier", "button button-muted certification-link");
+      actions.appendChild(link);
+    }
+
+    appendChildren(card, [top, badgeContainer, title, code, desc, actions]);
+    grid.appendChild(card);
   });
 }
 
@@ -541,6 +691,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   renderExperiences();
   renderSkills();
+  renderCertifications();
   renderContacts();
   setupReveal();
   setupCursor();
