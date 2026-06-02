@@ -20,7 +20,7 @@ const activeTensions = [
 
 const projects = [
   {
-    title: "Broadpeak — Pilote IA Support Client",
+    title: "Broadpeak - Pilote IA Support Client",
     status: "publié",
     description: "Deux pilotes Agentforce pour le support client d'un acteur majeur du streaming et CDN.",
     problem: "Les conseillers support perdaient du temps à chercher des cas similaires dans un historique massif, et la reprise de tickets longs imposait une relecture pénible de tous les emails et posts Chatter.",
@@ -35,12 +35,12 @@ const projects = [
     accent: "#00A1E0"
   },
   {
-    title: "LOXAM — Agent Smart Visit",
+    title: "LOXAM - Agent Smart Visit",
     status: "publié",
     description: "Agent commercial Agentforce d'aide post-visite chantier pour les commerciaux du leader européen de la location BTP.",
-    problem: "Les comptes-rendus de visite étaient rédigés à 75 %, et seulement 30 % étaient complets — perte d'informations terrain et reporting inutilisable.",
+    problem: "Les comptes-rendus de visite étaient rédigés à 75 %, et seulement 30 % étaient complets - perte d'informations terrain et reporting inutilisable.",
     method: "Saisie vocale ou textuelle du commercial, structuration auto du CR, relance par questions de l'agent en cas d'éléments manquants. Automatisation des actions liées : création prochaine visite, tâches, mise à jour contact et offre. Lexique métier BTP intégré.",
-    result: "95 % de CR rédigés (+20 pts), 80 % de CR complets (+50 pts), 5 min par CR — soit 2h30 de gain par commercial et par semaine.",
+    result: "95 % de CR rédigés (+20 pts), 80 % de CR complets (+50 pts), 5 min par CR - soit 2h30 de gain par commercial et par semaine.",
     limit: "Couverture limitée au workflow post-visite, pas encore d'extension à la prospection.",
     nextStep: "Extension aux interventions techniques et au reporting consolidé direction commerciale.",
     stack: ["Salesforce Agentforce", "Reconnaissance vocale", "Flow Builder", "Apex", "Migration de données", "Recette technique"],
@@ -50,9 +50,9 @@ const projects = [
     accent: "#f4a261"
   },
   {
-    title: "DPE Reality Check — Open Data University",
+    title: "DPE Reality Check - Open Data University",
     status: "publié",
-    description: "Concours national Open Data University (Latitudes × Enedis × data.gouv.fr) — confrontation des Diagnostics de Performance Énergétique aux consommations réelles.",
+    description: "Concours national Open Data University (Latitudes × Enedis × data.gouv.fr) - confrontation des Diagnostics de Performance Énergétique aux consommations réelles.",
     problem: "Le DPE théorique cache des écarts importants avec la consommation réelle des logements. Comment objectiver ces écarts à l'échelle nationale pour outiller les politiques publiques ?",
     method: "Croisement Python/Pandas de trois bases ouvertes : DPE Logements existants (ADEME, 8,2 M diagnostics), Consommation Enedis par adresse, Base Adresse Nationale. Datavisualisation Tableau avec diagramme de Sankey, cartographies de risque et matrice de priorisation. Prototype WebApp interactif avec questionnaire de vie énergétique de 24 questions.",
     result: "68 % de taux d'appariement, plus d'1 million d'adresses qualifiées, écart théorique/réel pouvant atteindre 40 %. Découverte de l'Effet Rebond (classes A/B/C qui surconsomment) et de la Précarité Énergétique Masquée (F/G qui sous-consomment par privation). Concept inédit de DPE Vivant à 21 sous-classes.",
@@ -65,13 +65,13 @@ const projects = [
     accent: "#34d399"
   },
   {
-    title: "SmartEngine — Prédiction de churn SaaS B2B",
+    title: "SmartEngine - Prédiction de churn SaaS B2B",
     status: "publié",
-    description: "Système de scoring prédictif du churn pour un éditeur SaaS B2B (cas RavenStack) — projet 5 sprints en Scrum.",
+    description: "Système de scoring prédictif du churn pour un éditeur SaaS B2B (cas RavenStack) - projet 5 sprints en Scrum.",
     problem: "Anticiper le churn pour permettre aux équipes Customer Success d'intervenir avant la résiliation et sécuriser le MRR.",
     method: "5 sprints Scrum (rôle Product Owner + Dev Data). Pipeline anti-fuite avec détection automatique de colonnes de leakage. Benchmark d'algorithmes (Logistic Regression, Random Forest, Gradient Boosting). Double seuil de décision (0.20 classification, 0.60 priorisation CS). Explicabilité SHAP. Orchestration multi-agents Gemini CLI.",
     result: "Modèle ML opérationnel avec Recall > 75 % sur la classe Churn, dashboard Streamlit pour les CSM, automatisation n8n.",
-    limit: "Dataset RavenStack synthétique — à valider sur données réelles avant industrialisation.",
+    limit: "Dataset RavenStack synthétique - à valider sur données réelles avant industrialisation.",
     nextStep: "Branchement sur un vrai pipeline de données SaaS, intégration au CRM.",
     stack: ["Python", "Pandas", "Scikit-learn", "Streamlit", "Gemini CLI", "n8n", "SHAP"],
     tags: ["ML", "churn", "SaaS", "scrum"],
@@ -80,13 +80,13 @@ const projects = [
     accent: "#a78bfa"
   },
   {
-    title: "Hermès — Démo Agentforce Retail & Luxe",
+    title: "Hermès - Démo Agentforce Retail & Luxe",
     status: "publié",
     description: "5 scénarios Agentforce pour le service client haut de gamme de la maison Hermès.",
     problem: "Comment fluidifier l'expérience client luxe (achat, livraison, réclamation) sans dégrader la posture de marque ?",
-    method: "Scénario 1 — Achat coffret parfum avec création contact/compte/opportunité/commande. Scénario 2 — Variante cliente connue. Scénario 3 — Décalage de livraison. Scénario 4 — Produit non conforme et création de case. Scénario 5 — Console agent service client : cases prioritaires, résumé contextualisé, génération de tâches.",
+    method: "Scénario 1 - Achat coffret parfum avec création contact/compte/opportunité/commande. Scénario 2 - Variante cliente connue. Scénario 3 - Décalage de livraison. Scénario 4 - Produit non conforme et création de case. Scénario 5 - Console agent service client : cases prioritaires, résumé contextualisé, génération de tâches.",
     result: "Démo livrée et présentée. Couverture des principaux parcours clients luxe en B2C.",
-    limit: "Démo conceptuelle — pas de mise en production réelle.",
+    limit: "Démo conceptuelle - pas de mise en production réelle.",
     nextStep: "Si retenu : POC avec données réelles et intégration au site Hermès.",
     stack: ["Salesforce Agentforce", "Service Cloud", "Prompt Engineering", "Conception de scénarios"],
     tags: ["IA", "salesforce", "luxe", "démo"],
@@ -95,13 +95,13 @@ const projects = [
     accent: "#a78bfa"
   },
   {
-    title: "Europe Assistance — Démo Agentforce Assurance",
+    title: "Europe Assistance - Démo Agentforce Assurance",
     status: "publié",
     description: "4 scénarios Agentforce pour la déclaration et l'instruction de sinistres en assurance.",
     problem: "Simplifier la déclaration de sinistre côté assuré et outiller les agents d'instruction côté Salesforce.",
-    method: "Scénario 1 — Déclaration éligible (identification, vérif contrat, collecte des infos, prestations, email d'accusé). Scénario 2 — Sinistre non éligible avec transfert Omnichannel à un agent live. Scénario 3 SF — Instruction par un agent (mandatement expert, ajout prestataires). Scénario 4 SF — Dossier incomplet et relance pièces.",
+    method: "Scénario 1 - Déclaration éligible (identification, vérif contrat, collecte des infos, prestations, email d'accusé). Scénario 2 - Sinistre non éligible avec transfert Omnichannel à un agent live. Scénario 3 SF - Instruction par un agent (mandatement expert, ajout prestataires). Scénario 4 SF - Dossier incomplet et relance pièces.",
     result: "Démo sectorielle livrée pour EAF avec 4 parcours complets bout en bout.",
-    limit: "Conception sectorielle — sans intégration au SI assurance d'EAF.",
+    limit: "Conception sectorielle - sans intégration au SI assurance d'EAF.",
     nextStep: "Phase POC avec un sous-périmètre métier réel d'Europe Assistance.",
     stack: ["Salesforce Agentforce", "Service Cloud", "Omnichannel", "Templates email", "Workflow"],
     tags: ["IA", "salesforce", "assurance", "démo"],
@@ -110,13 +110,13 @@ const projects = [
     accent: "#34d399"
   },
   {
-    title: "Retail & Luxe — Cas d'usage Agentforce WhatsApp & Messenger",
+    title: "Retail & Luxe - Cas d'usage Agentforce WhatsApp & Messenger",
     status: "publié",
     description: "5 scénarios Agentforce déployés sur canaux de messagerie (WhatsApp, Messenger) pour Retail et Luxe.",
     problem: "Comment activer Agentforce sur les canaux conversationnels où sont les clients, sans sacrifier la qualité du service ?",
     method: "Scénario Sodastream (B2C, conseil produit), Golden Luxe (réclamation VIP routée Omnichannel), Nike (échange retour), Decathlon (assistant interne conseillère), Maison de luxe (cadeau personnalisé avec relance).",
     result: "Présentation sectorielle complète couvrant les principaux cas d'usage Retail et Luxe en canal messagerie.",
-    limit: "Conception sectorielle — démo, pas de déploiement en production.",
+    limit: "Conception sectorielle - démo, pas de déploiement en production.",
     nextStep: "Industrialisation sur un client réel du secteur.",
     stack: ["Salesforce Agentforce", "Omnichannel", "WhatsApp Business", "Messenger", "Service Cloud"],
     tags: ["IA", "salesforce", "retail", "luxe", "omnichannel"],
@@ -131,7 +131,7 @@ const projects = [
     problem: "Démontrer la maîtrise complète d'une chaîne data marketing, du modèle relationnel jusqu'à la visualisation décisionnelle.",
     method: "MySQL avec schéma relationnel 5 tables (clients, catégories, produits, commandes, lignes_commande). Pipeline Python (mysql-connector, pandas, requests) qui extrait, enrichit via l'API Open Food Facts, calcule les scores RFM en quintiles, détermine les segments client (Champions, Loyalists, At Risk, Lost...) et réinjecte dans rfm_results. Dashboard Plotly Dash pour la restitution.",
     result: "Soutenance orale de 10 minutes devant jury INSEEC, dashboard interactif, code documenté sur GitHub.",
-    limit: "Données simulées sur la boutique cosmétique — à brancher sur un vrai e-commerce pour usage production.",
+    limit: "Données simulées sur la boutique cosmétique - à brancher sur un vrai e-commerce pour usage production.",
     nextStep: "Industrialisation sur un client réel et ajout de modèles prédictifs (CLV, next best offer).",
     stack: ["MySQL", "Python", "Pandas", "Plotly Dash", "API REST", "ETL", "RFM"],
     tags: ["data", "marketing", "segmentation", "BI"],
@@ -140,13 +140,13 @@ const projects = [
     accent: "#fbbf24"
   },
   {
-    title: "LOXAM — Démo Agentforce Voice",
+    title: "LOXAM - Démo Agentforce Voice",
     status: "publié",
     description: "Démo commerciale d'Agentforce en mode vocal pour le contexte terrain BTP.",
     problem: "Démontrer la capacité d'Agentforce à interagir en voix naturelle pour les commerciaux mobiles, mains occupées.",
     method: "Design end-to-end : topics, instructions, Flows d'orchestration sur Events, Contacts et Leads. Sécurisation des actions API REST avec OAuth/JWT.",
     result: "Démo animée en client final pour illustrer l'usage vocal d'Agentforce en mobilité.",
-    limit: "Démo — pas de déploiement opérationnel.",
+    limit: "Démo - pas de déploiement opérationnel.",
     nextStep: "POC vocal sur un sous-périmètre réel LOXAM si retenu.",
     stack: ["Salesforce Agentforce", "Voice", "Flow Builder", "API REST", "OAuth/JWT"],
     tags: ["IA", "salesforce", "voice", "BTP"],
@@ -155,13 +155,13 @@ const projects = [
     accent: "#ff6f91"
   },
   {
-    title: "Formation Agentforce — Référent Niji",
+    title: "Formation Agentforce - Référent Niji",
     status: "en continu",
-    description: "Formation des nouveaux entrants Niji sur Agentforce — référent technique interne.",
+    description: "Formation des nouveaux entrants Niji sur Agentforce - référent technique interne.",
     problem: "Accélérer la montée en compétences des consultants Niji sur Agentforce pour répondre à la demande client croissante.",
     method: "Sessions de formation structurées : prise en main d'Agentforce, bonnes pratiques de prompt engineering, configuration Data Cloud, intégration aux Flows et Apex, démonstration de cas d'usage clients.",
     result: "Onboarding accéléré des nouveaux entrants Niji, capitalisation des bonnes pratiques projet.",
-    limit: "Formation interne — pas de support externe pour l'instant.",
+    limit: "Formation interne - pas de support externe pour l'instant.",
     nextStep: "Création d'un agent IA interne de rédaction de documentation technique pour industrialiser les livrables.",
     stack: ["Salesforce Agentforce", "Pédagogie technique", "Onboarding", "Documentation"],
     tags: ["formation", "salesforce", "interne"],
@@ -174,8 +174,8 @@ const projects = [
 const experiences = [
   {
     role: "Consultant Salesforce (Alternance) · Agentforce Specialist",
-    context: "Niji — Lyon, France",
-    period: "Sept. 2024 — Sept. 2026",
+    context: "Niji - Lyon, France",
+    period: "Sept. 2024 - Sept. 2026",
     missions: [
       "Conception et delivery de pilotes Agentforce IA pour Broadpeak (Similar Cases, Case Summary) : Retriever Einstein, Data Cloud, Apex Batch de nettoyage HTML",
       "Design end-to-end du use case Agentforce Voice pour LOXAM : topics, Flows d'orchestration, sécurisation API REST avec OAuth/JWT",
@@ -188,8 +188,8 @@ const experiences = [
   },
   {
     role: "Responsable Marketing Digital & Analytics",
-    context: "World Mission Agency — Lyon, France",
-    period: "Fév. 2023 — Sept. 2024",
+    context: "World Mission Agency - Lyon, France",
+    period: "Fév. 2023 - Sept. 2024",
     missions: [
       "Conception et pilotage de campagnes marketing digital multi-canaux (Facebook Ads, Instagram, YouTube)",
       "Suivi des performances via Google Analytics 4 et Google Tag Manager (engagement, conversion, portée)",
@@ -202,8 +202,8 @@ const experiences = [
   },
   {
     role: "Data Analyst",
-    context: "Rhythex Consulting — Ghana",
-    period: "Fév. 2022 — Avr. 2024",
+    context: "Rhythex Consulting - Ghana",
+    period: "Fév. 2022 - Avr. 2024",
     missions: [
       "Collecte, nettoyage et consolidation de données multi-sources avec Alteryx (workflows automatisés, jointures, dédoublonnage)",
       "Préparation de pipelines analytiques avec Dataiku",
