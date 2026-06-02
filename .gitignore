@@ -1,0 +1,13 @@
+# Dépendances / build
+node_modules/
+dist/
+
+# Vercel
+.vercel/
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
