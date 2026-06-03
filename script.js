@@ -270,7 +270,7 @@ const certifications = [
     name: "Agentforce Specialist",
     issuer: "Salesforce",
     code: "AI-201",
-    badge: "assets/badges/agentforce-specialist.webp",
+    badge: "assets/badges/alteryx-foundational.webp",
     href: "https://trailheadacademy.salesforce.com/certificate/exam-agentforce-specialist---AI-201",
     competences: "Conception et déploiement d'agents IA conversationnels sur Salesforce Agentforce. Configuration des topics, actions et instructions d'agent. Prompt engineering appliqué aux agents autonomes. Orchestration d'actions dans des workflows Salesforce."
   },
@@ -278,7 +278,7 @@ const certifications = [
     name: "Data Cloud Consultant",
     issuer: "Salesforce",
     code: "Data-Con-101",
-    badge: "assets/badges/data-cloud-consultant.webp",
+    badge: "assets/badges/alteryx-designer-core.webp",
     href: "https://trailheadacademy.salesforce.com/certificate/exam-data-cloud---Data-Con-101",
     competences: "Configuration de Salesforce Data Cloud : Data Streams, Data Model Objects (DMO), Search Index. Ingestion et harmonisation de données multi-sources. Segmentation, activation et résolution d'identités. Intégration avec Einstein AI et les flux Salesforce."
   },
@@ -322,7 +322,7 @@ const certifications = [
     name: "Designer Core Certification",
     issuer: "Alteryx",
     code: "Validée",
-    badge: "assets/badges/alteryx-designer-core.png",
+    badge: "assets/badges/agentforce-specialist.png",
     href: null,
     competences: "Maîtrise d'Alteryx Designer pour la construction de workflows ETL visuels. Nettoyage, transformation, jointure et enrichissement de données. Préparation analytique et automatisation de pipelines data sans code."
   },
@@ -330,7 +330,7 @@ const certifications = [
     name: "Foundational Micro-Credential",
     issuer: "Alteryx",
     code: "Nov. 2025",
-    badge: "assets/badges/alteryx-foundational.png",
+    badge: "assets/badges/data-cloud-consultant.png",
     href: null,
     competences: "Fondamentaux de la plateforme Alteryx. Manipulation de données tabulaires, blending de sources, filtrage et agrégation. Première brique de compétence vers les certifications avancées."
   },
