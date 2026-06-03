@@ -340,7 +340,7 @@ const certifications = [
     name: "Data Analyst - Niveau 3 (FR)",
     issuer: "Liora (DataScientest)",
     code: "29 mai 2026",
-    badge: null,
+    badge: "assets/badges/liora-data-analyst.png",
     href: null,
     competences: "Analyse de données avancée : statistiques descriptives et inférentielles, tests d'hypothèses. Programmation Python (Pandas, NumPy, Matplotlib). Requêtes SQL complexes. Datavisualisation et restitution de résultats pour la prise de décision."
   },
@@ -350,7 +350,7 @@ const certifications = [
     name: "Python Fundamentals for Data Science",
     issuer: "TECHaway × DataScientest × Omnes",
     code: "21 juil. 2025",
-    badge: null,
+    badge: "assets/badges/techaway-python.png",
     href: null,
     competences: "Programmation Python appliquée à la data science. Structures de données, fonctions, librairies Pandas et NumPy. Manipulation, nettoyage et exploration de jeux de données."
   },
@@ -358,7 +358,7 @@ const certifications = [
     name: "Building Data Workflows with No-Code Platforms",
     issuer: "TECHaway × DataScientest × Omnes",
     code: "21 juil. 2025",
-    badge: null,
+    badge: "assets/badges/techaway-no-code-workflows.png",
     href: null,
     competences: "Construction de workflows de données sur plateformes no-code. Automatisation de pipelines d'ingestion, transformation et export. Orchestration de tâches data marketing sans écrire de code."
   },
@@ -366,7 +366,7 @@ const certifications = [
     name: "Data-Driven Marketing with No-Code Tools",
     issuer: "TECHaway × DataScientest × Omnes",
     code: "21 juil. 2025",
-    badge: null,
+    badge: "assets/badges/techaway-no-code-marketing.png",
     href: null,
     competences: "Marketing piloté par la donnée à l'aide d'outils no-code. Segmentation client, scoring, personnalisation de campagnes. Mesure de performance et optimisation basée sur les données."
   }
