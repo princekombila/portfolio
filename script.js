@@ -171,6 +171,56 @@ const projects = [
   }
 ];
 
+const dataikuProjects = [
+  {
+    title: "DBS Autos - Pricing & Clustering",
+    status: "livre",
+    accent: "#f4d35e",
+    description: "Modelisation du prix de vente final et segmentation de 50 000 annonces de vehicules d'occasion sur AutoScoot (marche allemand). Double approche : regression supervisee + clustering non supervise.",
+    details: [
+      ["Problematique", "Estimer le prix final (final_selling_price) avec une precision < 10% d'erreur en moyenne. Identifier les variables les plus influentes sur le prix. Segmenter les annonces pour cibler des strategies commerciales distinctes."],
+      ["Methode", "P0 - Ridge Regression sur 39 970 lignes (test 10 030 lignes). Variables cles : market_share_brand, brand, longitude. P1 - Clustering KMeans k=5 sur 50 000 annonces, 5 segments identifies : Electrique, Vehicles_recents, Zones_prosperees, Agglomeration, Ventes_difficiles."],
+      ["Resultats", "Modele Ridge : 34 arbres de decision, max depth=3, entraine en 7 secondes. KMeans Silhouette Score = 0.049 (separation limitee, signalee en recommandations). Variables marque et geographie confirmees comme principaux leviers de prix."],
+      ["Recommandations", "Integrer autonomie des VE et politiques locales de circulation. Tester DBSCAN pour des clusters plus coherents. Automatiser la collecte via pipeline ETL Python + APIs AutoScout24."]
+    ],
+    stack: ["Dataiku DSS", "Ridge Regression", "KMeans", "Python", "Pandas", "Feature Engineering", "Data Viz"],
+    tags: ["automobile", "pricing", "clustering"],
+    links: [{ label: "Confidentiel", href: null }]
+  },
+  {
+    title: "Aviation - Prediction Retards & Annulations",
+    status: "livre",
+    accent: "#55cbd3",
+    description: "Classification triclasse (On Time / Delayed / Cancelled) sur 3 600 vols d'une compagnie aerienne fictive, avec detection de data leakage et pipeline Dataiku multi-sources.",
+    details: [
+      ["Dataset", "3 600 vols (2023-2025), 12 tables de donnees, flotte de 100 appareils, 500 routes mondiales. Sources : meteo, maintenance, ventes, profils clients."],
+      ["Methode", "P0 - Classification triclasse Random Forest / LightGBM / Logistic Regression. Feature Importance et SHAP. Partial Dependence Plots (days_since_maintenance, modele avion). Pipeline Dataiku structure Raw, Prepared, Features, Scored."],
+      ["Leakage detecte", "Identification d'un data leakage critique : delay_min agissait comme variable cible deguisee (information du futur). Recommandation d'exclusion immediate avant toute mise en production."],
+      ["Desequilibre classes", "Cancelled = 4.66% du dataset. Solutions proposees : class_weight='balanced', SMOTE sur train set uniquement, optimisation du seuil de decision, separation en 2 modeles binaires independants."],
+      ["Recommandations", "Deploiement via Dataiku API Node, seuil proba_Delayed > 0.60. Integration de 6 sources CSV complementaires (BTS Transtats, Open-Meteo, OpenSky) : gain AUC estime +5 a +15 pts apres correction leakage."]
+    ],
+    stack: ["Dataiku DSS", "Random Forest", "LightGBM", "Logistic Regression", "SHAP", "PCA", "Python", "Pandas"],
+    tags: ["aviation", "classification", "MLOps"],
+    links: [{ label: "Confidentiel", href: null }]
+  },
+  {
+    title: "SISE-Eaux - Conformite Eau Potable",
+    status: "livre",
+    accent: "#9ed08b",
+    description: "Prediction de non-conformite de prelevements d'eau potable avant les resultats de laboratoire + segmentation des reseaux de distribution. Donnees open data Rhone 2025, croisees avec les etablissements FINESS.",
+    details: [
+      ["Dataset", "3 457 prelevements uniques, 6 sources open data (SISE-Eaux, analyses pH/nitrates/E.coli/chlore, FINESS etablissements de sante), 86 reseaux (UDI), 26 cas non conformes identifies."],
+      ["Methode", "P0 - Classification binaire (Random Forest + Logistic Regression), K-Fold k=5 stratifie, target is_non_conforme. P1 - Clustering non supervise KMeans k=3 et k=5 (Silhouette Score). Feature Importance et SHAP. Pipeline Dataiku : 6 LEFT JOINs sur 8 datasets sources."],
+      ["Resultats P0", "Random Forest - Recall 85% sur la classe non-conforme. AUC potentiellement > 0.97 si extension au perimetre national. Alerte ARS automatique si proba_NC > 0.60 : delai d'intervention reduit de 48h a 4h."],
+      ["Resultats P1", "3 clusters identifies : 81 reseaux conformes (cluster_0, -20% frequence controle), 5 reseaux sous surveillance (cluster_1), 1 reseau critique (cluster_2). Economie estimee : 15 a 20% du budget surveillance annuel. 156 EHPAD identifies en zones a risque."],
+      ["Impact", "99.25% de conformite globale dans le Rhone. Outil d'aide a la decision pour les ARS : priorisation des controles et protection des etablissements vulnerables."]
+    ],
+    stack: ["Dataiku DSS", "Random Forest", "Logistic Regression", "KMeans", "SHAP", "K-Fold", "Python", "Open Data"],
+    tags: ["sante publique", "open data", "classification"],
+    links: [{ label: "Confidentiel", href: null }]
+  }
+];
+
 const experiences = [
   {
     role: "Consultant Salesforce (Alternance) · Agentforce Specialist",
@@ -526,6 +576,49 @@ function renderProjects() {
   });
 }
 
+function renderDataikuProjects() {
+  const grid = document.querySelector("#dataiku-project-grid");
+  if (!grid) return;
+
+  dataikuProjects.forEach((project, index) => {
+    const card = createElement("article", "project-card reveal");
+    card.style.setProperty("--accent", project.accent);
+
+    const top = createElement("div", "project-top");
+    appendChildren(top, [
+      createElement("span", "", String(index + 1).padStart(2, "0")),
+      createElement("span", "project-status", project.status)
+    ]);
+
+    const title = createElement("h3", "", project.title);
+    const description = createElement("p", "project-description", project.description);
+
+    const details = createElement("dl", "project-details");
+    project.details.forEach(([term, value]) => {
+      details.appendChild(createElement("dt", "", term));
+      details.appendChild(createElement("dd", "", value));
+    });
+
+    const stack = createElement("div", "tag-row");
+    project.stack.forEach((item) => stack.appendChild(createElement("span", "stack-tag", item)));
+
+    const tags = createElement("div", "tag-row secondary");
+    project.tags.forEach((tag) => tags.appendChild(createElement("span", "meta-tag", tag)));
+
+    const links = createElement("div", "project-links");
+    project.links.forEach((link) => {
+      if (link.href) {
+        links.appendChild(createLink(link.href, link.label));
+      } else {
+        links.appendChild(createElement("span", "meta-tag", link.label));
+      }
+    });
+
+    appendChildren(card, [top, title, description, details, stack, tags, links]);
+    grid.appendChild(card);
+  });
+}
+
 function renderExperiences() {
   const grid = document.querySelector("#experience-grid");
   if (!grid) return;
@@ -689,6 +782,7 @@ function setupActiveNavigation() {
 document.addEventListener("DOMContentLoaded", () => {
   renderActiveTensions(document.querySelector("#hero-system-map"));
   renderProjects();
+  renderDataikuProjects();
   renderExperiences();
   renderSkills();
   renderCertifications();
