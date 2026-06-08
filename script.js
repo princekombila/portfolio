@@ -315,8 +315,7 @@ const contacts = [
 ];
 
 const cvLinks = [
-  { lang: "FR", label: "CV Prince Kombila FR", sublabel: "Version francaise", qr: "assets/qr-cv-fr.png", href: "cv-prince-kombila-fr.svg", accent: "#ff8b4a" },
-  { lang: "EN", label: "CV Prince Kombila EN", sublabel: "English version", qr: "assets/qr-cv-en.png", href: "cv-prince-kombila-en.svg", accent: "#55cbd3" }
+  { lang: "FR", label: "CV Prince Kombila FR", sublabel: "Version francaise", qr: "assets/qr-cv-fr.png", href: "cv-prince-kombila-fr.pdf", download: "CV_Prince_Kombila_FR.pdf", accent: "#ff8b4a" }
 ];
 
 const certifications = [
@@ -752,7 +751,7 @@ function renderCV() {
     btnOpen.textContent = "Ouvrir";
     const btnDl = document.createElement("a");
     btnDl.href = cv.href;
-    btnDl.download = cv.label.replace(/ /g, "_") + ".svg";
+    btnDl.download = cv.download;
     btnDl.className = "button button-muted";
     btnDl.textContent = "Telecharger";
     appendChildren(actions, [btnOpen, btnDl]);
