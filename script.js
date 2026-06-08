@@ -314,6 +314,11 @@ const contacts = [
   { label: "GitHub",   value: "github.com/princekombila",                     href: profile.github }
 ];
 
+const cvLinks = [
+  { lang: "FR", label: "CV Prince Kombila FR", sublabel: "Version francaise", qr: "assets/qr-cv-fr.png", href: "cv-prince-kombila-fr.svg", accent: "#ff8b4a" },
+  { lang: "EN", label: "CV Prince Kombila EN", sublabel: "English version", qr: "assets/qr-cv-en.png", href: "cv-prince-kombila-en.svg", accent: "#55cbd3" }
+];
+
 const certifications = [
   // ——— SALESFORCE (4 certifications officielles) ———
   {
@@ -717,6 +722,45 @@ function renderContacts() {
   });
 }
 
+function renderCV() {
+  const grid = document.querySelector("#cv-grid");
+  if (!grid) return;
+  cvLinks.forEach((cv) => {
+    const card = createElement("article", "cv-card reveal");
+    card.style.setProperty("--accent", cv.accent);
+    const badge = createElement("span", "cv-lang-badge", cv.lang);
+    const qrLink = document.createElement("a");
+    qrLink.href = cv.href;
+    qrLink.target = "_blank";
+    qrLink.rel = "noreferrer";
+    qrLink.className = "cv-qr-link";
+    qrLink.setAttribute("aria-label", "Ouvrir " + cv.label);
+    const qrImg = document.createElement("img");
+    qrImg.src = cv.qr;
+    qrImg.alt = "QR code " + cv.label;
+    qrImg.className = "cv-qr-img";
+    qrImg.loading = "lazy";
+    qrLink.appendChild(qrImg);
+    const title = createElement("p", "cv-label", cv.label);
+    const sub = createElement("p", "cv-sublabel", cv.sublabel);
+    const actions = createElement("div", "cv-actions");
+    const btnOpen = document.createElement("a");
+    btnOpen.href = cv.href;
+    btnOpen.target = "_blank";
+    btnOpen.rel = "noreferrer";
+    btnOpen.className = "button";
+    btnOpen.textContent = "Ouvrir";
+    const btnDl = document.createElement("a");
+    btnDl.href = cv.href;
+    btnDl.download = cv.label.replace(/ /g, "_") + ".svg";
+    btnDl.className = "button button-muted";
+    btnDl.textContent = "Telecharger";
+    appendChildren(actions, [btnOpen, btnDl]);
+    appendChildren(card, [badge, qrLink, title, sub, actions]);
+    grid.appendChild(card);
+  });
+}
+
 function setupReveal() {
   const elements = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
@@ -786,6 +830,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderExperiences();
   renderSkills();
   renderCertifications();
+  renderCV();
   renderContacts();
   setupReveal();
   setupCursor();
